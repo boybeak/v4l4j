@@ -1,0 +1,35 @@
+# Tested Hardware #
+See TestedHardware page for a list of platforms and video devices libvideo has been successfully tested with.
+
+# Download #
+libvideo is included in v4l4j, in the libvideo/ subdirectory.
+If you want to download only libvideo (not the entire v4l4j project), use the following command:
+```
+svn co http://v4l4j.googlecode.com/svn/v4l4j/trunk/libvideo
+```
+
+# Requirements #
+libvideo requires make, gcc and a V4L-supported video source. It has been successfully compiled with gcc 4.2.3 and gcc 4.1.2
+
+# Build #
+Run "make" in the libvideo/ directory
+
+# Usage #
+libvideo is a library and is meant to be linked to an application. To this end, check the [libvideo API](libvideoAPI.md) page for documentation and examples on how to use libvideo.
+
+# Example applications #
+libvideo comes with three test programs which can be used as examples:
+  * 'test-capture' is used to print the maximum achievable frame rate. It runs a capture from a given video device at a given resolution for  10 seconds and then prints the frame rate.
+  * 'dump-catpure' which is similar to the previous application, except that it will write the captured frames to disk,
+  * 'list-caps' which lists information about a given video device.
+
+To compile the test programs, run "make test" in libvideo/.
+
+In addition to these simple programs, the libvideo/example/ directory contains a lighweight application called light\_cap, which captures frames and sends them out as a multipart JPEG stream suitable for viewing in <img> tags of any standard-compliant web browser (no java applet required). The video stream can also be viewed in standard programs such as ffplay and VLC. See libvideo/example/README for more details.<br>
+<br>
+<h1>Debugging</h1>
+libvideo contains lots of debug statements which are disabled by default. To enable them, use 'DEBUG=1 make clean test'. Extra output will be produced to allow troubleshooting.<br>
+<br>
+<h1>Issues</h1>
+Feedback is is greatly appreciated to expand the list of platforms and video devices libvideo has been successfully tested with.<br>
+Feedback, issues and queries can be emailed to the <a href='http://groups.google.com/group/v4l4j'>v4l4j mailing list</a> along with a description of what went wrong (or right) and what hardware you run libvideo on.
